@@ -1,0 +1,188 @@
+@import "variables.scss";
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: $darkBlack;
+  color: #333;
+}
+
+.play-controls {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: $lightBlack;
+  border-top: 3px solid $gray;
+
+  .buttons-container {
+    padding: 10px 0;
+    text-align: center;
+
+    .btn {
+      background: none;
+      border: 0;
+      border-radius: 0;
+      font-size: 150%;
+      color: $almostWhite;
+
+      &.play {
+        font-size: 250%;
+
+        &.playing {
+          color: $green;
+        }
+      }
+
+      &:hover {
+        text-shadow: 0 0 8px #fff;
+      }
+
+      &:active {
+        color: darken($almostWhite, 20%);
+      }
+
+      &:focus {
+        box-shadow: none;
+        outline: none;
+      }
+    }
+  }
+}
+
+.search-box {
+  position: relative;
+  padding: 10px 0;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, .4);
+  z-index: 99999;
+
+  input {
+    display: block;
+    width: 100%;
+    background: none;
+    border-radius: 0;
+    border: 0;
+    box-shadow: none !important;
+    outline: none;
+    color: $almostWhite;
+    font-size: 180%;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .input-group-addon {
+    background: none;
+    border-radius: 0;
+    border: 0;
+
+    .fa {
+      margin-left: 20px;
+
+      &.fa-spotify {
+        color: $green;
+      }
+
+      &.fa-close {
+        cursor: pointer;
+      }
+    }
+
+    i {
+      color: $almostWhite;
+    }
+  }
+}
+
+.autocomplete-container {
+  position: absolute;
+  width: 100%;
+  z-index: 999;
+
+  .autocomplete-list {
+    position: relative;
+    background: lighten($darkBlack, 5%);
+    color: $almostWhite;
+    max-height: 80vh;
+    overflow-y: scroll;
+
+    .autocomplete-item {
+      cursor: pointer;
+      padding: 10px 20px;
+
+      img {
+        margin-right: 20px;
+        width: 64px;
+        height: 64px;
+      }
+
+      span {
+        font-size: 100%;
+      }
+
+      &:hover {
+        background: lighten($darkBlack, 6%);
+      }
+    }
+  }
+}
+
+.tracks-list {
+  position: relative;
+  color: $almostWhite;
+  max-height: 80vh;
+  overflow-y: scroll;
+
+  .row {
+    border-bottom: 1px solid lighten($darkBlack, 5%);
+  }
+
+  .track {
+    padding: 10px 0;
+
+    img {
+      margin-right: 20px;
+      width: 64px;
+      height: 64px;
+    }
+
+    .playing {
+      margin-right: 14px;
+    }
+
+    .badge {
+      margin: 0 8px;
+      color: $darkBlack;
+
+      &.up {
+        background: $green;
+      }
+
+      &.down {
+        background: $red;
+      }
+    }
+  }
+
+  .buttons {
+    margin-top: 30px;
+    text-align: right;
+
+    button {
+      height: 100%;
+      margin: 0 8px;
+      background: none;
+      border: 0;
+
+      &:focus, &:active {
+        outline: none;
+      }
+
+      &:active {
+        color: $green;
+      }
+    }
+  }
+}

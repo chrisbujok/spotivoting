@@ -1,0 +1,27 @@
+{
+  "extends": [
+    "eslint:recommended", "plugin:react/recommended", "airbnb"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true
+    },
+    "sourceType": "module"
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "mocha": true
+  },
+  "plugins": [
+    "react", "import", "jsx-a11y"
+  ],
+  "rules": {
+    "no-console": 0,
+    "no-underscore-dangle": 1,
+    "quotes": [2, "single"],
+    // added to avoid errors caused by Immutable.js (List, Set, etc.)
+    "new-cap": ["error", { "properties": false }]
+  }
+}
